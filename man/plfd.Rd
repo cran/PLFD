@@ -15,10 +15,11 @@ plfd(x1, x2, r0, c0, blockList, blockMode = NULL, permNum = 100, alpha = 0)
 
 \item{blockList}{List including the index set of pre-specified blocks. See details.}
 
-\item{blockMode}{How the differential structure of \code{M1-M2} are detected.
-The default (\code{blockMode=NULL}) does NOT detect the structure of feature blocks.
-If \code{blockMode="fd"}(or \code{"forward"}), a forward stepwise procedure is conducted to
-detect the nonzero positions of feature blocks, wherein BIC serves as the stopping rule.}
+\item{blockMode}{How the differential structure of \mjeqn{M_1 - M_2}{M1-M2} are
+detected. The default (\code{blockMode=NULL}) does NOT detect the structure of feature
+blocks. If \code{blockMode="fd"}(or \code{"forward"}), a forward stepwise procedure is
+conducted to detect the nonzero positions of feature blocks, wherein BIC serves
+as the stopping rule.}
 
 \item{permNum}{Round of permutation.}
 
@@ -26,14 +27,10 @@ detect the nonzero positions of feature blocks, wherein BIC serves as the stoppi
 }
 \value{
 List, \itemize{
-\item \code{paras} List of the parameters of feature blocks.
-\item \code{y} Self-predicted results for training data. It is a matrix of
-\mjeqn{(n_1+n_2)\times 2}{(n1+n2)*2}, the first column is the
-scores and the second column is the predicted labels.
-\item \code{mcr} The self-predicted misclassification rate for training samples.
-\item \code{ytest.hat} The predicted result for \code{xtest} if it is provided. It is a
-matrix where the first column is scores and the second column is predicted group.
-\item \code{mcr.test} The misclassification rate for \code{xtest} if \code{ytest} is provided.
+\item \code{n1}, \code{n2}, \code{rDim}, \code{cDim}, \code{blockMode}, \code{permNum}, \code{alpha};
+\item \code{blockNumber}: the number of identified feature blocks.
+\item \code{paras}: \code{list(list(rIdx, cIdx, B, M), ...)}, list of the information of
+feature blocks.
 }
 }
 \description{

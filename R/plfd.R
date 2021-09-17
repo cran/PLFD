@@ -7,10 +7,11 @@
 #' @param x2 Array of \mjeqn{r \times c \times n_2}{r*c*n2}, samples from group 2.
 #' @param r0,c0 Row and column size of blocks. See details.
 #' @param blockList List including the index set of pre-specified blocks. See details.
-#' @param blockMode How the differential structure of `M1-M2` are detected.
-#' The default (`blockMode=NULL`) does NOT detect the structure of feature blocks. 
-#' If `blockMode="fd"`(or `"forward"`), a forward stepwise procedure is conducted to
-#' detect the nonzero positions of feature blocks, wherein BIC serves as the stopping rule.
+#' @param blockMode How the differential structure of \mjeqn{M_1 - M_2}{M1-M2} are 
+#' detected. The default (`blockMode=NULL`) does NOT detect the structure of feature 
+#' blocks. If `blockMode="fd"`(or `"forward"`), a forward stepwise procedure is 
+#' conducted to detect the nonzero positions of feature blocks, wherein BIC serves 
+#' as the stopping rule.
 #' @param permNum Round of permutation.
 #' @param alpha The upper-\mjeqn{\alpha}{alpha} quantile of the permutation statistic. 
 #' 
@@ -23,14 +24,10 @@
 #' set of a block. See examples.
 #' 
 #' @return List, \itemize{
-#'  \item `paras` List of the parameters of feature blocks.
-#'  \item `y` Self-predicted results for training data. It is a matrix of 
-#'      \mjeqn{(n_1+n_2)\times 2}{(n1+n2)*2}, the first column is the 
-#'      scores and the second column is the predicted labels.
-#'  \item `mcr` The self-predicted misclassification rate for training samples.
-#'  \item `ytest.hat` The predicted result for `xtest` if it is provided. It is a
-#'        matrix where the first column is scores and the second column is predicted group.
-#'  \item `mcr.test` The misclassification rate for `xtest` if `ytest` is provided.
+#'  \item `n1`, `n2`, `rDim`, `cDim`, `blockMode`, `permNum`, `alpha`;
+#'  \item `blockNumber`: the number of identified feature blocks.
+#'  \item `paras`: `list(list(rIdx, cIdx, B, M), ...)`, list of the information of 
+#'  feature blocks.
 #' }
 #' 
 #' @examples

@@ -3,24 +3,21 @@
 * `R > 3.5.0`
 * To install `PLFD` from source on win-platform, please ensure that the [Rtools](https://cran.r-project.org/bin/windows/Rtools/) is deployed well. 
 
+
 ## Installation
 
-Install from [CRAN](https://cran.r-project.org/):
-
 ```R
+# From CRAN
 install.packages("PLFD")
-```
 
-Install from source:
-
-```R
+# From git
 library(remotes)
-install_git("https://gitee.com/xu-zc/PLFD.git", build_vignettes=TRUE)
+install_git("https://gitee.com/xu-zc/PLFD.git")
 ```
 
 ## Usage
 
-See the vignettes after installation.
+See the examples and vignette.
 
 ## Reference
 
