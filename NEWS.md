@@ -1,11 +1,31 @@
-# 2021-09-17 (v0.1.1)
+2023-01-10 (v0.2.0)
+====================
 
-* Small patch in light of planned Rcpp change (https://github.com/RcppCore/Rcpp/issues/1158).
+* performance improvement through avoiding repetitive estimation.
 
-* Update documentation.
+* polish structures.
 
 
 
-# 2021-08-07 (v0.1.0)
+2021-09-18 (v0.1.2)
+===================
 
-Initial version
+* export `print.plfd` method.
+
+* update documentation.
+
+
+
+2021-09-17 (v0.1.1)
+===================
+
+* small patch in light of planned Rcpp change (https://github.com/RcppCore/Rcpp/issues/1158).
+
+* update documentation.
+
+
+
+2021-08-07 (v0.1.0)
+===================
+
+* initial version
